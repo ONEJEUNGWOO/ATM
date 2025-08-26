@@ -24,4 +24,9 @@ public class WithdrawlUI : MonoBehaviour
     {
         UIManager.Instance.OpenMainMenuUI();
     }
+
+    public void RemoveMoney(int cash)  //인스펙터에서 연결 하는 사진이 있어서 그대로 했습니다.
+    {
+        UIManager.Instance.RemoveMoney(cash);
+    }
 }

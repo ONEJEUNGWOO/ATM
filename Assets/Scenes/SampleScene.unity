@@ -1695,7 +1695,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 426740910}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1165934252}
+        m_TargetAssemblyTypeName: WithdrawlUI, Assembly-CSharp
+        m_MethodName: RemoveMoney
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 30000
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &426740910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1950,7 +1962,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 495617326}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1165934252}
+        m_TargetAssemblyTypeName: WithdrawlUI, Assembly-CSharp
+        m_MethodName: RemoveMoney
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 50000
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &495617326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4317,7 +4341,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1365766318}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1165934252}
+        m_TargetAssemblyTypeName: WithdrawlUI, Assembly-CSharp
+        m_MethodName: RemoveMoney
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10000
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1365766318
 MonoBehaviour:
   m_ObjectHideFlags: 0

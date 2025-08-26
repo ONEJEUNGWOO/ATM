@@ -77,4 +77,12 @@ public class UIManager : MonoBehaviour
 
         Refresh();
     }
+
+    public void RemoveMoney(int Cash)
+    {
+        GameManager.Instance.userData.cash += Cash;
+        GameManager.Instance.userData.balance -= Cash;
+
+        Refresh();
+    }
 }
