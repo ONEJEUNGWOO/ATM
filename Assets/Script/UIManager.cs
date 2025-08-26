@@ -70,4 +70,11 @@ public class UIManager : MonoBehaviour
         WithdrawlUI.gameObject.gameObject.SetActive(true);
     }
 
+    public void AddMoney(int Cash)
+    {
+        GameManager.Instance.userData.cash -= Cash;
+        GameManager.Instance.userData.balance += Cash;
+
+        Refresh();
+    }
 }

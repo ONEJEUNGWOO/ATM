@@ -11,6 +11,12 @@ public class MenuUI : MonoBehaviour
     public Button InCashButton { get { return inCashButton; } set { inCashButton = value; } }
     public Button OutCashButton { get { return outCashButton; } set { outCashButton = value; } }
 
+    private void Start()
+    {
+        InCashButton.onClick.AddListener(OpenInCash);
+        OutCashButton.onClick.AddListener(OpenOutCash);
+    }
+
     public void OpenInCash()
     {
         UIManager.Instance.OpenDepositUI();
