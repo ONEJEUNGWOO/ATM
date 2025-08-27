@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void SaveUserData()      //데이터를 json언어로 바꿔서 지정한 위치에 이름으로 저장하기
     {
-        string json = JsonUtility.ToJson(userData, true);
+        string json = JsonUtility.ToJson(userData,true);
         File.WriteAllText(savePath, json);
         Debug.Log($"저장 {savePath}");
     }

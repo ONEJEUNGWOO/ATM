@@ -8,8 +8,10 @@ public class UserInfoUI : MonoBehaviour
     [SerializeField] private Text userNameText;
     [SerializeField] private Text userMoneyText;
 
-    public Text UserNameText { get { return userNameText; } set { userNameText = value; } }
-    public Text UserMoneyText { get { return userMoneyText; } set { userMoneyText = value; } }
 
-
+    public void SetData(string userName, int money)
+    {
+        userNameText.text = userName;   
+        userMoneyText.text = $"Banlance      {money.ToString("N0")}";
+    }
 }

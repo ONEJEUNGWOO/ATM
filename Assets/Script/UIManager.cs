@@ -42,9 +42,8 @@ public class UIManager : MonoBehaviour
     {
         GameManager gm = GameManager.Instance;
 
-        ATMUI.CashText.text = $"Çö±Ý\n{gm.userData.cash.ToString("N0")}";
-        UserInfoUI.UserMoneyText.text = $"Banlance      {gm.userData.balance.ToString("N0")}";
-        UserInfoUI.UserNameText.text = gm.userData.name;
+        ATMUI.SetData(gm.userData.cash);
+        UserInfoUI.SetData(gm.userData.name, gm.userData.balance);
     }
 
     public void OpenMainMenuUI()
@@ -82,31 +81,29 @@ public class UIManager : MonoBehaviour
         NeedMoneyUI.gameObject.SetActive(false);
     }
 
-    public void AddMoney(int Cash)
+    public void AddMoney(int cash)
     {
-        if (Cash > GameManager.Instance.userData.cash)
+        if (cash > GameManager.Instance.userData.cash)
         {
             OpenNeedMoneyUI();
             return;
         }
 
-        GameManager.Instance.userData.cash -= Cash;
-        GameManager.Instance.userData.balance += Cash;
+        GameManager.Instance.userData.AddMoney(cash);
 
         Refresh();
         GameManager.Instance.SaveUserData();
     }
 
-    public void RemoveMoney(int Cash)
+    public void RemoveMoney(int money)
     {
-        if (Cash > GameManager.Instance.userData.balance)
+        if (money > GameManager.Instance.userData.balance)
         {
             OpenNeedMoneyUI();
             return;
         }
 
-        GameManager.Instance.userData.cash += Cash;
-        GameManager.Instance.userData.balance -= Cash;
+        GameManager.Instance.userData.AddCash(money);
 
         Refresh();
         GameManager.Instance.SaveUserData();

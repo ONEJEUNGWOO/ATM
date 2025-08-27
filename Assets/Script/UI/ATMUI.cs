@@ -7,5 +7,8 @@ public class ATMUI : MonoBehaviour
 {
     [SerializeField] private Text cashText;
 
-    public Text CashText { get { return cashText; } set { cashText = value; } }
+    public void SetData(int cash)
+    {
+        cashText.text = $"Çö±Ý\n{cash.ToString("N0")}";
+    }
 }

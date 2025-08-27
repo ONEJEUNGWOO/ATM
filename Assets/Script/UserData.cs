@@ -16,4 +16,16 @@ public class UserData
         balance = Balance;
         cash = Cash;
     }
+
+    public void AddMoney(int money)
+    {
+        cash -= money;
+        balance += money;
+    }
+
+    public void AddCash(int cash)
+    {
+        GameManager.Instance.userData.cash += cash;
+        GameManager.Instance.userData.balance -= cash;
+    }
 }
