@@ -11,12 +11,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private UserInfoUI userInfoUI;
     [SerializeField] private DepositUI depositUI;
     [SerializeField] private WithdrawlUI withdrawlUI;
+    [SerializeField] private NeedMoneyUI needMoneyUI;
 
     public ATMUI ATMUI { get { return atmUI; } set { atmUI = value; } }
     public MenuUI MenuUI { get { return menuUI; } set { menuUI = value; } }
     public UserInfoUI UserInfoUI { get { return userInfoUI; } set { userInfoUI = value; } }
     public DepositUI DepositUI { get { return depositUI; } set { depositUI = value; } }
     public WithdrawlUI WithdrawlUI { get { return withdrawlUI; } set { withdrawlUI = value; } }
+    public NeedMoneyUI NeedMoneyUI { get { return needMoneyUI; } set { needMoneyUI = value; } }
 
     private void Awake()
     {
@@ -70,8 +72,24 @@ public class UIManager : MonoBehaviour
         WithdrawlUI.gameObject.gameObject.SetActive(true);
     }
 
+    public void OpenNeedMoneyUI()
+    {
+        NeedMoneyUI.gameObject.SetActive(true);
+    }
+
+    public void CloseNeedMoneyUI()
+    {
+        NeedMoneyUI.gameObject.SetActive(false);
+    }
+
     public void AddMoney(int Cash)
     {
+        if (Cash > GameManager.Instance.userData.cash)
+        {
+            OpenNeedMoneyUI();
+            return;
+        }
+
         GameManager.Instance.userData.cash -= Cash;
         GameManager.Instance.userData.balance += Cash;
 
@@ -80,6 +98,12 @@ public class UIManager : MonoBehaviour
 
     public void RemoveMoney(int Cash)
     {
+        if (Cash > GameManager.Instance.userData.balance)
+        {
+            OpenNeedMoneyUI();
+            return;
+        }
+
         GameManager.Instance.userData.cash += Cash;
         GameManager.Instance.userData.balance -= Cash;
 
