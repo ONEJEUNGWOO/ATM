@@ -404,7 +404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &91911937
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1160,7 +1160,7 @@ GameObject:
   - component: {fileID: 254124007}
   - component: {fileID: 254124006}
   m_Layer: 5
-  m_Name: Button
+  m_Name: EnterButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3987,6 +3987,8 @@ MonoBehaviour:
   money_1_Button: {fileID: 1365766317}
   money_3_Button: {fileID: 426740909}
   money_5_Button: {fileID: 495617325}
+  enterButton: {fileID: 254124006}
+  inputField: {fileID: 2077180217}
 --- !u!1 &1235424369
 GameObject:
   m_ObjectHideFlags: 0

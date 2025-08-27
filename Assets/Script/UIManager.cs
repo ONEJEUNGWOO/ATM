@@ -94,6 +94,7 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.userData.balance += Cash;
 
         Refresh();
+        GameManager.Instance.SaveUserData();
     }
 
     public void RemoveMoney(int Cash)
@@ -108,5 +109,6 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.userData.balance -= Cash;
 
         Refresh();
+        GameManager.Instance.SaveUserData();
     }
 }
